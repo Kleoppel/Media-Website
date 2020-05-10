@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 // import { login, logout, isLoggedIn } from '../utils/AuthService';
 import '../App.css';
 
@@ -33,4 +33,3 @@ class Nav extends Component {
   }
 }
 export default Nav;
- 

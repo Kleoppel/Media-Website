@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import Display from './components/Display';
+import Display from './components/Display';
 import Callback from './components/Callback';
 import { Router, Route, BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
@@ -16,7 +16,7 @@ const Root = () => {
       </BrowserRouter>
     </div>
   )
-}
+};
 
 ReactDOM.render(
   <React.StrictMode>
