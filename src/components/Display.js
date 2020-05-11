@@ -7,15 +7,13 @@ import axios from 'axios';
 class Display extends React.Component {
 
   render() {
-
     return (
       <div>
         <Nav />
-        <h3 className="text-center"> Latest Videos on Miniflix </h3>
+          <h3 className="text-center"> Latest Videos on Miniflix </h3>
         <hr/>
 
         <div className="col-sm-12">
-
         </div>
       </div>
     );
