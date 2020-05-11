@@ -20,6 +20,7 @@ const Root = () => {
 
 ReactDOM.render(
   <React.StrictMode>
+    <Root />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
