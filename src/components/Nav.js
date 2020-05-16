@@ -40,15 +40,15 @@ class Nav extends Component {
                   Hello {this.props.auth.user.username}
                 </p>
               )}
-              <div className="buttons">
+              <div>
                 {!this.props.auth.isAuthenticated && (
                   <div>
-                    <button className="button is-primary">
+                    <button className="buttons">
                       <a href="/register" >
                         <strong>Register</strong>
                       </a>
                     </button>
-                    <button className="button is-light">
+                    <button className="buttons">
                       <a href="/login" >
                         Log in
                       </a>
@@ -56,7 +56,7 @@ class Nav extends Component {
                   </div>
                 )}
                 {this.props.auth.isAuthenticated && (
-                  <a href="/" onClick={this.handleLogOut} className="button is-light">
+                  <a href="/" onClick={this.handleLogOut} className="buttons">
                     Log out
                   </a>
                 )}
