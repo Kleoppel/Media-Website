@@ -9,14 +9,20 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={{
+        'width': '300px',
+        'display': 'inline'
+    }} > 
         <input type="text"
                value={this.state.searchValue}
                onChange={event => this.setState({searchValue: event.target.value})}
                placeholder="Catalog Name"
                required
         />
-        <button>Search</button>
+        <button style={{
+          'color': 'black',
+          'background-color': 'white'
+        }}>Search</button>
       </form>
     );
   }

@@ -15,6 +15,8 @@ import Register from "./components/auth/Register";
 import Welcome from "./components/auth/Welcome";
 import NotFound from "./containers/NotFound";
 import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const testData = [
   {
@@ -73,6 +75,7 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
+        <Header/>
         <Router>
           <div>
             <Nav auth={authProps}/>
@@ -95,7 +98,9 @@ class App extends React.Component {
         </Router>
         <SearchBar onSubmit={this.searchCatalogs}/>
         <CatalogCardList catalogs={testData}/>
+        <Footer/>
       </div>
+       
     );
   }
 }
