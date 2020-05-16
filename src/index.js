@@ -1,29 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Amplify from 'aws-amplify';
 import './index.css';
 import App from './App';
-import Display from './components/Display';
-import Callback from './components/Callback';
-import { Router, Route, BrowserRouter } from 'react-router-dom';
+import config from './config';
 import * as serviceWorker from './serviceWorker';
 
-const Root = () => {
-  return (
-    <div className="container">
-      <BrowserRouter>
-        <Route path="/" component={Display}/>
-        <Route path="/callback" component={Callback} />
-      </BrowserRouter>
-    </div>
-  )
-};
+Amplify.configure({
+  Auth: {
+    mandatorySignIn: true,
+    region: config.cognito.REGION,
+    userPoolId: config.cognito.USER_POOL_ID,
+    userPoolWebClientId: config.cognito.APP_CLIENT_ID
+  },
+  API: {
+    endpoints: [
+      {
+        name: 'media-website',
+        endpoint: config.apiGateway.invokeUrl
+      }
+    ]
+  }
+});
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+ReactDOM.render(<App/>, document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

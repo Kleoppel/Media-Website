@@ -1,18 +1,18 @@
 import React from "react";
 
 class CatalogCard extends React.Component {
-    render() {
-        const catalog = this.props;
-        return (
-            <div className="catalog">
-                <img src={catalog.image} />
-                <div className="info">
-                    <div className="name">{catalog.name}</div>
-                    <div className="date">{catalog.date}</div>
-                </div>
-            </div>
-        )
-    }
+  render() {
+    const catalog = this.props;
+    return (
+      <div className="card-list">
+        <img src={catalog.image} alt={catalog.image.toString()}/>
+        <div className="info">
+          <div className="name">{catalog.name}</div>
+          <div className="date">{catalog.date}</div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default CatalogCard;

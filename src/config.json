@@ -1,0 +1,10 @@
+{
+  "apiGateway": {
+    "invokeUrl": "https://we23f186r3.execute-api.us-east-1.amazonaws.com/dev"
+  },
+  "cognito": {
+    "REGION": "us-east-1",
+    "USER_POOL_ID": "us-east-1_kf0SV4fyn",
+    "APP_CLIENT_ID": "4jst1d3cq1i03tinamcuc2rlko"
+  }
+}
