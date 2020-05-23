@@ -79,12 +79,12 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
-        
+
         <Router>
           <div>
           <Navigation/>
             <Switch>
-              
+
               <Route path="/" exact component={Home}/>
               <Route path="/search" exact component={Search}/>
               <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
@@ -101,12 +101,12 @@ class App extends React.Component {
               <Route component={NotFound}/>
             </Switch>
           </div>
-        //</Router>
+        </Router>
         <SearchBar onSubmit={this.searchCatalogs}/>
         <CatalogCardList catalogs={testData}/>
         <Footer/>
       </div>
-       
+
     );
   }
 }

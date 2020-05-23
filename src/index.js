@@ -16,7 +16,7 @@ Amplify.configure({
   },
   API: {
     endpoints: [
-      { 
+      {
         name: 'media-website',
         endpoint: config.apiGateway.invokeUrl
       }

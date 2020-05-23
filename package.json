@@ -9,6 +9,7 @@
     "aws-amplify": "^3.0.10",
     "aws-sdk": "^2.674.0",
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
