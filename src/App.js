@@ -3,9 +3,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth} from 'aws-amplify';
 import CatalogCardList from './components/CatalogCardList';
 import Home from "./containers/Home";
-// import Home from "./components/Home2";
+import Search from "./components/Search";
+
 import SearchBar from './components/SearchBar';
-import Nav from './components/Nav';
+
+import Navigation from './components/Navigation';
 import ChangePassword from "./components/auth/ChangePassword";
 import ChangePasswordConfirm from "./components/auth/ChangePasswordConfirm";
 import ForgotPassword from "./components/auth/ForgotPassword";
@@ -15,8 +17,10 @@ import Register from "./components/auth/Register";
 import Welcome from "./components/auth/Welcome";
 import NotFound from "./containers/NotFound";
 import './App.css';
-import Header from "./components/Header";
+
 import Footer from "./components/Footer";
+
+
 
 const testData = [
   {
@@ -75,12 +79,14 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
-        <Header/>
+        
         <Router>
           <div>
-            <Nav auth={authProps}/>
+          <Navigation/>
             <Switch>
-              <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>
+              
+              <Route path="/" exact component={Home}/>
+              <Route path="/search" exact component={Search}/>
               <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
               <Route exact path="/register" render={(props) => <Register {...props} auth={authProps}/>}/>
               <Route exact path="/forgotpassword"
@@ -95,7 +101,7 @@ class App extends React.Component {
               <Route component={NotFound}/>
             </Switch>
           </div>
-        </Router>
+        //</Router>
         <SearchBar onSubmit={this.searchCatalogs}/>
         <CatalogCardList catalogs={testData}/>
         <Footer/>

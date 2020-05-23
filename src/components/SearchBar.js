@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
         />
         <button style={{
           'color': 'black',
-          'background-color': 'white'
+          'backgroundColor': 'white'
         }}>Search</button>
       </form>
     );
