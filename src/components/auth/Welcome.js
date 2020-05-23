@@ -6,6 +6,11 @@ export default function Welcome() {
       <div className="container">
         <h1>Welcome!</h1>
         <p>You have successfully registered a new account.</p>
+        <button>
+          <a href="/login" >
+            Log In!
+          </a>
+        </button>
       </div>
     </section>
   )
