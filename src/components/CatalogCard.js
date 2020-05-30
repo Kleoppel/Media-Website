@@ -1,4 +1,5 @@
 import React from "react";
+import { Carousel } from "react-bootstrap";
 
 class CatalogCard extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class CatalogCard extends React.Component {
       </div>
     )
   }
+
 }
 
 export default CatalogCard;

@@ -18,6 +18,7 @@ import Welcome from "./components/auth/Welcome";
 import NotFound from "./containers/NotFound";
 import './App.css';
 
+
 import Footer from "./components/Footer";
 
 
@@ -102,8 +103,7 @@ class App extends React.Component {
             </Switch>
           </div>
         </Router>
-        <SearchBar onSubmit={this.searchCatalogs}/>
-        <CatalogCardList catalogs={testData}/>
+
         <Footer/>
       </div>
 

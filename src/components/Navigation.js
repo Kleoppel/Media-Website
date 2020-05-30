@@ -34,7 +34,7 @@ const Navigation = (props) => {
 
 
                 <Nav className="ml-auto">
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                    <NavDropdown title="User Settings" id="collasible-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/">Action</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/search">Another action</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/">Something</NavDropdown.Item>

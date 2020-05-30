@@ -6,6 +6,8 @@ import App from './App';
 import config from './config';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 Amplify.configure({
   Auth: {
