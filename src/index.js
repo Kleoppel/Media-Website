@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import config from './config';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Amplify.configure({
   Auth: {

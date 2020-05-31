@@ -5,7 +5,7 @@ function Footer(){
         <div 
             className="Footer"
             style={{
-                'background-color': 'black',
+                'backgroundColor': 'black',
                 'color': "white",
                 'position': 'absolute',
                 'left': '0',

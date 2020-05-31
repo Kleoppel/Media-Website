@@ -3,6 +3,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth} from 'aws-amplify';
 import CatalogCardList from './components/CatalogCardList';
 import Home from "./containers/Home";
+import Search from "./components/Search";
+
+import SearchBar from './components/SearchBar';
+
+import Navigation from './components/Navigation';
 // import Home from "./components/Home2";
 import Nav from './components/Nav';
 import Upload from "./components/Upload";
@@ -15,7 +20,7 @@ import Register from "./components/auth/Register";
 import Welcome from "./components/auth/Welcome";
 import NotFound from "./containers/NotFound";
 import './App.css';
-import Header from "./components/Header";
+
 import Footer from "./components/Footer";
 
 const testData = [
@@ -69,12 +74,11 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
-        <Header/>
         {this.state.isAuthenticated && (
           <div>
             <Router>
               <div>
-                <Nav auth={authProps}/>
+                <Navigation auth={authProps}/>
                 <Switch>
                   <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>
                   <Route exact path="/upload" render={(props) => <Upload {...props} auth={authProps}/>}/>
@@ -90,7 +94,7 @@ class App extends React.Component {
             <div>
               <Router>
                 <div>
-                  <Nav auth={authProps}/>
+                  <Navigation auth={authProps}/>
                   <Switch>
                     <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
                     <Route exact path="/register" render={(props) => <Register {...props} auth={authProps}/>}/>
