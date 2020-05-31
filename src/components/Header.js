@@ -1,3 +1,5 @@
+// TODO: Remove if decide not needed.
+
 import React from 'react';
 import Menu from "./Menu";
 import SearchBar from "./SearchBar";
@@ -6,11 +8,6 @@ import SearchBar from "./SearchBar";
 class Header extends React.Component {
 // function Header(){
 
-    searchCatalogs = (catalogSearchData) => {
-        // this.setState(prevState => ({
-        //   catalogs: [...prevState.catalogs, catalogSearchData],
-        // }));
-      };
    render() {
         return (
             <div  style={{
@@ -18,16 +15,16 @@ class Header extends React.Component {
                 'color': "white",
                 'display': 'inline-block',
                 'width': '100%'}}>
-                
+
                 <Menu/>
                 <img src="Super_Bowl_LIV.png" alt="Super Bowl LIV" style={{
                     'width': '50px'}}/>
                 <SearchBar onSubmit={this.searchCatalogs}/>
             </div>
-        
+
         )
    }
-    
+
 // }
 }
 

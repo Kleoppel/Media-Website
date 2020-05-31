@@ -58,14 +58,6 @@ class Register extends Component {
       this.props.history.push("/welcome");
     } catch (error) {
       console.log(error);
-      // let err = null;
-      // !error.message ? err = {"message": error} : err = error;
-      // this.setState({
-      //   error: {
-      //     ...this.state.errors,
-      //     cognito: error
-      //   }
-      // })
     }
   };
 
@@ -75,6 +67,10 @@ class Register extends Component {
     });
     document.getElementById(event.target.id).classList.remove("is-danger");
   };
+
+  navigateToLogin() {
+    this.props.history.push("/login");
+  }
 
   render() {
     return (
@@ -195,6 +191,11 @@ class Register extends Component {
               </p>
             </div>
           </form>
+          <div>
+            <button onClick={() => {this.navigateToLogin()}}>
+              Login
+            </button>
+          </div>
         </div>
       </section>
     );

@@ -1,16 +1,12 @@
+// TODO: Add Auth logic to display/hide profile/login links when Auth is finished.
+
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth} from 'aws-amplify';
-import CatalogCardList from './components/CatalogCardList';
 import Home from "./containers/Home";
 import Search from "./components/Search";
 
-import SearchBar from './components/SearchBar';
-
 import Navigation from './components/Navigation';
-// import Home from "./components/Home2";
-import Nav from './components/Nav';
-import Upload from "./components/Upload";
 import ChangePassword from "./components/auth/ChangePassword";
 import ChangePasswordConfirm from "./components/auth/ChangePasswordConfirm";
 import ForgotPassword from "./components/auth/ForgotPassword";
@@ -23,20 +19,20 @@ import './App.css';
 
 import Footer from "./components/Footer";
 
-const testData = [
-  {
-    id: 1, name: "Red Angus", date: "12-31-2020",
-    image: "mcdonald_front_cover.PNG"
-  },
-  {
-    id: 2, name: "McDonalds", date: "10-31-2020",
-    image: "mcdonald_front_cover.PNG"
-  }
-];
+// const testData = [
+//   {
+//     id: 1, name: "Red Angus", date: "12-31-2020",
+//     image: "mcdonald_front_cover.PNG"
+//   },
+//   {
+//     id: 2, name: "McDonalds", date: "10-31-2020",
+//     image: "mcdonald_front_cover.PNG"
+//   }
+// ];
 
 class App extends React.Component {
   state = {
-    catalogs: testData,
+    // catalogs: testData,
     isAuthenticated: false,
     isAuthenticating: true,
     user: null
@@ -74,46 +70,26 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
-        {this.state.isAuthenticated && (
+        <Router>
           <div>
-            <Router>
-              <div>
-                <Navigation auth={authProps}/>
-                <Switch>
-                  <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>
-                  <Route exact path="/upload" render={(props) => <Upload {...props} auth={authProps}/>}/>
-                  <Route component={NotFound}/>
-                </Switch>
-              </div>
-            </Router>
-            <CatalogCardList catalogs={testData}/>
+            <Navigation auth={authProps}/>
+            <Switch>
+              <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>
+              <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
+              <Route exact path="/register" render={(props) => <Register {...props} auth={authProps}/>}/>
+              <Route exact path="/forgotpassword"
+                     render={(props) => <ForgotPassword {...props} auth={authProps}/>}/>
+              <Route exact path="/forgotpasswordverification"
+                     render={(props) => <ForgotPasswordVerification {...props} auth={authProps}/>}/>
+              <Route exact path="/changepassword"
+                     render={(props) => <ChangePassword {...props} auth={authProps}/>}/>
+              <Route exact path="/changepasswordconfirmation"
+                     render={(props) => <ChangePasswordConfirm {...props} auth={authProps}/>}/>
+              <Route exact path="/welcome" render={(props) => <Welcome {...props} auth={authProps}/>}/>
+              <Route component={NotFound}/>
+            </Switch>
           </div>
-          )}
-        <div>
-          {!this.state.isAuthenticated && (
-            <div>
-              <Router>
-                <div>
-                  <Navigation auth={authProps}/>
-                  <Switch>
-                    <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
-                    <Route exact path="/register" render={(props) => <Register {...props} auth={authProps}/>}/>
-                    <Route exact path="/forgotpassword"
-                           render={(props) => <ForgotPassword {...props} auth={authProps}/>}/>
-                    <Route exact path="/forgotpasswordverification"
-                           render={(props) => <ForgotPasswordVerification {...props} auth={authProps}/>}/>
-                    <Route exact path="/changepassword"
-                           render={(props) => <ChangePassword {...props} auth={authProps}/>}/>
-                    <Route exact path="/changepasswordconfirmation"
-                           render={(props) => <ChangePasswordConfirm {...props} auth={authProps}/>}/>
-                    <Route exact path="/welcome" render={(props) => <Welcome {...props} auth={authProps}/>}/>
-                    <Route component={NotFound}/>
-                  </Switch>
-                </div>
-              </Router>
-            </div>
-          )}
-        </div>
+        </Router>
         <Footer/>
       </div>
 
