@@ -53,29 +53,28 @@ const settings2 = {
 
 
 class Home extends React.Component {
-  
-  
+
   render() {
     const data1 = {
       data: testData,
       settings: settings
     };
-  
+
     const data2 ={
       data: testData,
       settings: settings2
     };
-   
+
      return (
-        <div className="home">
-           <h1>Home</h1>
-           <h3>Latest catalogs</h3>
-           <CatalogCardList {...data2}/>
-           
-           <h3>Breeds</h3>
-           <CatalogCardList {...data1}/>
-        </div>
-        
+       <div className="home">
+         <h1>Home</h1>
+         <h3>Latest catalogs</h3>
+         <CatalogCardList {...data2}/>
+
+         <h3>Breeds</h3>
+         <CatalogCardList {...data1}/>
+       </div>
+
      )
   }
 }

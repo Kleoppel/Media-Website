@@ -43,14 +43,6 @@ class LogIn extends Component {
       this.props.history.push("/");
     } catch (error) {
       console.log(error);
-      // let err = null;
-      // !error.message ? err = {"message": error} : err = error;
-      // this.setState({
-      //   error: {
-      //     ...this.state.errors,
-      //     cognito: error
-      //   }
-      // })
     }
   };
 

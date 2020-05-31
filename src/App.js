@@ -17,25 +17,22 @@ import Welcome from "./components/auth/Welcome";
 import NotFound from "./containers/NotFound";
 import './App.css';
 
-
 import Footer from "./components/Footer";
 
-
-
-const testData = [
-  {
-    id: 1, name: "Red Angus", date: "12-31-2020",
-    image: "mcdonald_front_cover.PNG"
-  },
-  {
-    id: 2, name: "McDonalds", date: "10-31-2020",
-    image: "mcdonald_front_cover.PNG"
-  }
-];
+// const testData = [
+//   {
+//     id: 1, name: "Red Angus", date: "12-31-2020",
+//     image: "mcdonald_front_cover.PNG"
+//   },
+//   {
+//     id: 2, name: "McDonalds", date: "10-31-2020",
+//     image: "mcdonald_front_cover.PNG"
+//   }
+// ];
 
 class App extends React.Component {
   state = {
-    catalogs: testData,
+    // catalogs: testData,
     isAuthenticated: false,
     isAuthenticating: true,
     user: null
@@ -73,14 +70,11 @@ class App extends React.Component {
     return (
       !this.state.isAuthenticating &&
       <div>
-
         <Router>
           <div>
-          <Navigation/>
+            <Navigation auth={authProps}/>
             <Switch>
-
-              <Route path="/" exact component={Home}/>
-              <Route path="/search" exact component={Search}/>
+              <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>
               <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps}/>}/>
               <Route exact path="/register" render={(props) => <Register {...props} auth={authProps}/>}/>
               <Route exact path="/forgotpassword"
@@ -96,7 +90,6 @@ class App extends React.Component {
             </Switch>
           </div>
         </Router>
-
         <Footer/>
       </div>
 
