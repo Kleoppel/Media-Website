@@ -2,9 +2,6 @@ import React from "react";
 import CatalogCard from "./CatalogCard";
 import Slider from "react-slick";
 
-
-
-
 function CatalogCardList(props) {
   const settings = props.data.settings;
 

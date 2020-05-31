@@ -1,11 +1,10 @@
+// TODO: Add Auth logic to display/hide profile/login links when Auth is finished.
+
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth} from 'aws-amplify';
-import CatalogCardList from './components/CatalogCardList';
 import Home from "./containers/Home";
 import Search from "./components/Search";
-
-import SearchBar from './components/SearchBar';
 
 import Navigation from './components/Navigation';
 import ChangePassword from "./components/auth/ChangePassword";
@@ -61,12 +60,6 @@ class App extends React.Component {
       console.log(error);
     }
     this.setState({isAuthenticating: false})
-  };
-
-  searchCatalogs = (catalogSearchData) => {
-    this.setState(prevState => ({
-      catalogs: [...prevState.catalogs, catalogSearchData],
-    }));
   };
 
   render() {

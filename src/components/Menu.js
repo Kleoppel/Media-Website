@@ -1,3 +1,5 @@
+//TODO: Remove if decided not needed
+
 import React, {Component} from 'react';
 import {HamburgerElastic} from 'react-animated-burgers'
 
@@ -14,7 +16,7 @@ class Menu extends Component {
 
     render() {
         return(
-            <HamburgerElastic  buttonWidth={20} buttonStyle={{'margin-right': '50px' }}isActive={this.state.isActive} 
+            <HamburgerElastic  buttonWidth={20} buttonStyle={{'margin-right': '50px' }}isActive={this.state.isActive}
                 toggleButton={this.toggleButton} buttonColor="#50c3b2" barColor="white"/>
         )
     }

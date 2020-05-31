@@ -1,3 +1,5 @@
+//TODO: Pull out login/auth logic and add to Navigation when Amplify is finished.
+
 import React, {Component} from 'react';
 import {Auth} from 'aws-amplify';
 import '../App.css';
