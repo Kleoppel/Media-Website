@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
-import {Auth} from 'aws-amplify';
 
-const navStyle = {
-  'margin-right': '100px'
-};
+// const navStyle = {
+//   'margin-right': '100px'
+// };
 
 class Navigation extends Component {
-  handleLogOut = async event => {
-    event.preventDefault();
-    try {
-      Auth.signOut();
-      this.props.auth.setAuthStatus(false);
-      this.props.auth.setUser(null);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   render () {
     console.log(this.props);
     return (
@@ -46,7 +34,7 @@ class Navigation extends Component {
             <NavDropdown.Item as={Link} to="/search">Another action</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/">Something</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/login" onClick={this.handleLogOut}>Log Off</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/" >Home</NavDropdown.Item>
           </NavDropdown>
         </Nav>
 
