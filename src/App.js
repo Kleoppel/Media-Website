@@ -69,9 +69,9 @@ class App extends React.Component {
 
     return (
       !this.state.isAuthenticating &&
-      <div>
+      <div className="site-container">
         <Router>
-          <div>
+          <div className="site-content">
             <Navigation auth={authProps}/>
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} auth={authProps}/>}/>

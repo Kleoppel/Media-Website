@@ -14,21 +14,26 @@
     color: red;
 }
 
+.site-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site-content {
+    flex: 1;
+}
+
 .navbar, .navbar-end, .navbar-menu, .navbar-start {
     align-items: stretch !important;
     display: flex !important;
 }
 
+
 .home {
     background-color: #A9A9A9;
-    
-   
     flex: 1;
-    height: 100vh;
 }
-.footer {
-    flex-shrink: 0;
-  }
 
 .navbar {
     margin: 0px;
@@ -64,10 +69,7 @@
     color: white;
     font-family: 'Georgia';
     margin-right: 50px;
-     /* position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center; */
+    margin-left: 10px;
 }
 .nav-link{
     font-size: 20px;
@@ -98,16 +100,17 @@
 }
 
 .card-list {
-    display: inline-block;
+    /* display: inline-block;
     margin-left: 2em;
     
-    /* display: flex; */
-    overflow-x: auto;
+    display: flex;
+    overflow-x: auto; */
     /* min-width: 100%; */
-}
 
-.card {
-
+    /* width: 300px;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: center; */
 }
 
 .d-block{
@@ -124,4 +127,18 @@
 
 .dark-green {
     background-color: #58a87e
+}
+
+/* Used for Slider in flexbox */
+.card-list-container {
+    padding: 40px;
+    color: #333;
+    display: flex;
+    flex-grow: 1;
+
+}
+
+* {
+min-height: 0;
+min-width: 0;
 }
