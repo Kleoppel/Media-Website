@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 // import './Home.css';
 
 import CatalogCardList from './../components/CatalogCardList';
-import Upload from "../components/Upload";
+// import Upload from "../components/Upload";
 
 // const mediaData = this.props.media;
 
@@ -57,13 +57,14 @@ const settings2 = {
 
 class Home extends React.Component {
 
-  mediaData = this.props.media;
-  categories = this.props.categories;
-  setCategories = this.props.setCategories;
+  // mediaData = this.props.media;
+  // categories = this.props.categories;
+  // setCategories = this.props.setCategories;
 
   render() {
     const data1 = {
-      data: this.mediaData,
+      // data: this.mediaData,
+      data: testData,
       settings: settings
     };
 
@@ -75,16 +76,16 @@ class Home extends React.Component {
      return (
        <div className="home">
          <h1>Home</h1>
-         {
-           this.props.media.map((media, index) => (
-             <div key={index}>
-               <h3>{media.name}</h3>
-               <p>{media.description}</p>
-             </div>
-           ))
-         }
+         {/*{*/}
+         {/*  this.props.media.map((media, index) => (*/}
+         {/*    <div key={index}>*/}
+         {/*      <h3>{media.name}</h3>*/}
+         {/*      <p>{media.description}</p>*/}
+         {/*    </div>*/}
+         {/*  ))*/}
+         {/*}*/}
          <h3>Latest catalogs</h3>
-         <CatalogCardList {...data2} categories={this.categories} setCategories={this.setCategories}/>
+         <CatalogCardList {...data2}/>
 
          <h3>Breeds</h3>
          <CatalogCardList {...data1}/>
