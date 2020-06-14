@@ -1,12 +1,19 @@
-// import React from 'react';
-// import API from 'aws-amplify';
-//
-// class Upload extends React.Component {
-//  state = {
-//    file: null,
-//    config: null,
-//    uploadProgressBar: null
-//  };
+import React from 'react';
+// import { API, graphqlOperation } from 'aws-amplify';
+// import { uuid } from 'uuid/v4';
+
+class Upload extends React.Component {
+
+
+}
+
+export default Upload;
+
+// state = {
+//   file: null,
+//   config: null,
+//   uploadProgressBar: null
+// };
 //
 //  init = (configConstants) => {
 //    this.setState.config = configConstants;
@@ -119,5 +126,3 @@
 //    );
 //  }
 // }
-//
-// export default Upload;

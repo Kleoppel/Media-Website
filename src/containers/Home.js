@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 // import {ListGroup} from 'react-bootstrap';
-// import {API} from 'aws-amplify';
+// import { API, graphqlOperation } from 'aws-amplify';
+// import { listMedias as ListMedias } from "../graphql/queries";
 // import './Home.css';
 
 import CatalogCardList from './../components/CatalogCardList';
+// import Upload from "../components/Upload";
 
+// const mediaData = this.props.media;
 
 const testData = [
   {
@@ -54,8 +57,13 @@ const settings2 = {
 
 class Home extends React.Component {
 
+  // mediaData = this.props.media;
+  // categories = this.props.categories;
+  // setCategories = this.props.setCategories;
+
   render() {
     const data1 = {
+      // data: this.mediaData,
       data: testData,
       settings: settings
     };
@@ -68,6 +76,14 @@ class Home extends React.Component {
      return (
        <div className="home">
          <h1>Home</h1>
+         {/*{*/}
+         {/*  this.props.media.map((media, index) => (*/}
+         {/*    <div key={index}>*/}
+         {/*      <h3>{media.name}</h3>*/}
+         {/*      <p>{media.description}</p>*/}
+         {/*    </div>*/}
+         {/*  ))*/}
+         {/*}*/}
          <h3>Latest catalogs</h3>
          <CatalogCardList {...data2}/>
 
