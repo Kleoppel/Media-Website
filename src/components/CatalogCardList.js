@@ -69,7 +69,7 @@ function CatalogCardList(props) {
   const settings = props.data.settings;
 
     return (
-      <div>
+      <div className="card-list-container">
         <Slider {...props.settings}>
           {props.data.map(catalogInfo =>
             <CatalogCard key={catalogInfo.id} {...catalogInfo}/>)
