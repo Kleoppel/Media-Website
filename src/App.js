@@ -6,7 +6,7 @@ import Home from "./containers/Home";
 import Navigation from './components/Navigation';
 // import Upload from './components/Upload';
 import NotFound from "./containers/NotFound";
-import './App.css';
+import './App.scss';
 import Footer from "./components/Footer";
 // import { API, graphqlOperation } from "aws-amplify";
 // import {listMedias as ListMedias} from "./graphql/queries";
