@@ -14,12 +14,12 @@ class Navigation extends Component {
         <Navbar.Brand as={Link} to="/">
           <img
             alt=""
-            src="Super_Bowl_LIV.png"
-            width="50"
+            src="thestockco.jpg"
+            width="150"
             height="50"
             className="d-inline-block align-top"
           />{' '}
-          <span className="title">The Stock</span>
+          {/*<span className="title">The Stock</span>*/}
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
