@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
 
+import { Form, FormControl, Button } from 'react-bootstrap';
+
 class Navigation extends Component {
+
+
 
   render() {
     console.log(this.props);
@@ -19,14 +23,17 @@ class Navigation extends Component {
             height="50"
             className="d-inline-block align-top"
           />{' '}
-          {/*<span className="title">The Stock</span>*/}
+          
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/search">Search</Nav.Link>
+           
           </Nav>
-
+          <Form inline>
+            <FormControl type="text" size="lg" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success" size="lg">Search</Button>
+          </Form>
           <Nav className="ml-auto">
             <NavDropdown title="User Settings" id="collapsible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/">Action</NavDropdown.Item>
