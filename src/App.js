@@ -8,8 +8,10 @@ import Navigation from './components/Navigation';
 import NotFound from "./containers/NotFound";
 import './App.scss';
 import Footer from "./components/Footer";
+
 // import { API, graphqlOperation } from "aws-amplify";
 // import {listMedias as ListMedias} from "./graphql/queries";
+import Search from './components/Search';
 
 // function App() {
 //   const [media, updateMedia] = useState([]);
@@ -115,6 +117,7 @@ class App extends React.Component {
             <Navigation />
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} />}/>
+              <Route path="/search" render={(props) => <Search {...props} />}/>
               <Route component={NotFound}/>
             </Switch>
           </div>
