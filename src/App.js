@@ -10,6 +10,7 @@ import NotFound from "./containers/NotFound";
 import './App.scss';
 import Footer from "./components/Footer";
 import Search from './components/Search';
+import Admin from "./containers/Admin";
 
 Amplify.configure(aws_exports);
 
@@ -25,6 +26,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} />}/>
               <Route path="/upload" render={(props) => <Upload {...props} />}/>
+              <Route path="/admin" render={(props) => <Admin {...props} />}/>
               <Route path="/search" render={(props) => <Search {...props} />}/>
               <Route component={NotFound}/>
             </Switch>
